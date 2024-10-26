@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="materialize/css/materialize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="particles.js-master/demo/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body style="font-family:  'DINCondensedC'">
+  <style>
+    .hover {
+      background-color: rgb(0, 0, 0);
+      color: black;
+    }
+
+    .hover:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .overlayimg {
+      /* background-color: black; */
+      position: absolute;
+    }
+
+    .overlay {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.427);
+      padding: 190px;
+    }
+
+    .overlayimg {
+      /* background-color: black; */
+      position: absolute;
+    }
+
+    .overlay {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.427);
+      padding: 190px;
+    }
+
+    .overlayimgg {
+      /* background-color: black; */
+      position: absolute;
+    }
+
+    .overlayed {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.427);
+      padding: px;
+
+    }
+
+    /* From Uiverse.io by matinMMA */
+    .mil {
+      font-size: 18px;
+      color: #000000;
+      font-family: inherit;
+      font-weight: 100;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      background: none;
+      text-transform: uppercase;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: color;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .mil:focus,
+    .mil:hover {
+      color: #000000;
+    }
+
+    .mil:focus:after,
+    .mil:hover:after {
+      width: 50%;
+      left: 0%;
+    }
+
+    .mil:after {
+      content: "";
+      pointer-events: none;
+      bottom: 25px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #01fffb;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: width, left;
+    }
+
+    #bot:focus,
+    #bot:hover {
+      color: #01fffb;
+    }
+
+    #bot:focus:after,
+    #bot:hover:after {
+      width: 50%;
+      right: 0%;
+    }
+
+    #bot:after {
+      content: "";
+      pointer-events: none;
+      bottom: -5px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #01fffb;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: width, right;
+    }
+
+    /* From Uiverse.io by gharsh11032000 */
+    .but {
+      cursor: pointer;
+      position: relative;
+      padding: 10px 24px;
+      font-size: 19px;
+      color: #01fffb;
+      border: 1px solid #01fffb;
+      border-radius: 34px;
+      background-color: transparent;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+      overflow: hidden;
+    }
+
+    .but::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      border-radius: inherit;
+      scale: 0;
+      z-index: -1;
+      background-color: #01fffb;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .but:hover::before {
+      scale: 3;
+    }
+
+    .but:hover {
+      color: #212121;
+      scale: 1.1;
+      box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+    }
+
+    .but:active {
+      scale: 1;
+    }
+
+
+    .swiper {
+      width: 100%;
+      height: 300px;
+    }
+
+    .item {
+
+      padding: 20px;
+      text-align: center;
+      color: white;
+      width: 35%;
+
+    }
+
+    .itemm {
+
+      padding: 20px;
+      text-align: center;
+      color: white;
+      width: 70%;
+
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+    body {
+      background: black;
+
+    }
+
+    .main-text {
+      color: white;
+      font-size: 3rem;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+      text-align: left;
+      margin-left: 25%;
+      margin-right: 10%;
+      animation: fadein 4s;
+      animation-timing-function: ease-in;
+      -moz-animation: fadein 4s;
+      /* Firefox */
+      -webkit-animation: fadein 4s;
+      /* Safari and Chrome */
+      -o-animation: fadein 4s;
+      /* Opera */
+    }
+
+    .jobs {
+      color: white;
+      font-size: 3rem;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+      text-align: left;
+      animation: fadein 4s;
+      animation-timing-function: ease-in;
+      -moz-animation: fadein 4s;
+      /* Firefox */
+      -webkit-animation: fadein 4s;
+      /* Safari and Chrome */
+      -o-animation: fadein 4s;
+      /* Opera */
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes fadein {
+
+      /* Firefox */
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadein {
+
+      /* Safari and Chrome */
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes fadein {
+
+      /* Opera */
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* external css: flickity.css */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .carousel {
+      background: linear-gradient(to right, rgb(12, 12, 35), rgb(12, 12, 35));
+      ;
+    }
+
+    .carousel-cell {
+      margin-right: 20px;
+      overflow: hidden;
+    }
+
+    .carousel-cell img {
+      display: block;
+      height: 200px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .carousel-cell img {
+        height: 400px;
+      }
+    }
+  </style>
+
+  <body style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;">
+
+    <nav style="position:fixed;background-color: rgba(0, 0, 0, 0); z-index: 9999;width: 100%; top: 0px;" id="navbar">
+      <div class="container">
+        <span><img src="img/IMG_9633-removebg-preview.png" alt="" srcset="" width="5%"></span>
+        <ul class="right hide-on-small-only"
+          style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;">
+
+
+          <li>
+            <button class="mil">
+              <a id="bot" href=""> HOME</a>
+            </button>
+          </li>
+          <li>
+            <button class="mil">
+              <a id="bot" href=" #introduction"> ABOUT US </a>
+            </button>
+          </li>
+          <li>
+            <button class="mil">
+              <a id="bot" href="#initialization"> PROJECT </a>
+            </button>
+          </li>
+          <li>
+            <button class="mil">
+              <a id="bot" href="get started.html">GET STARTED </a>
+            </button>
+          </li>
+
+
+
+
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+    <nav class="black hide-on-large-only"
+      style="position:fixed;background-color: rgba(0, 0, 0, 0); z-index: 9999;width: 100%;" id="navbar">
+      <ul id="slide-out" class="sidenav"
+        style="background-color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;">
+        <li style="border-bottom: solid 1px rgb(96, 95, 95);"><a href="home.html" style="color: white;">HOME</a></li>
+        <!-- <li> <a href=""><button class="hover btn" style="border-radius: 10px;">Particpate</button></a></li> -->
+        <li style="border-bottom: solid 1px rgb(96, 95, 95);"><a href="about.html" style="color: white;">ABOUT US</a></li>
+        <li style="border-bottom: solid 1px rgb(96, 95, 95);"><a href="project.html" style="color: white;">PROJECT</a>
+        </li>
+        <li style="border-bottom: solid 1px rgb(96, 95, 95);"><a href="" style="color:white">GET STARTED</a></li>
+      </ul>
+
+      <div class="row">
+        <div class="col m4 s8">
+          <div class="container">
+            <ul class="" style="display: inline;">
+              <li style="display: inline; margin-top: 4%;"><img src="IMG/IMG_9633-removebg-preview.png" srcset="" width="20%"></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="col m4 s"></div> -->
+        <div class="col m4 s4"><a class="sidenav-trigger right" href="" data-target="slide-out"> <i
+              class="fa-solid fa-bars"></i></a></div>
+      </div>
+    </nav>
+
+    <div style="height: 100vh;">
+      <!-- particles.js container -->
+      <div id="particles-js"></div>
+
+      <!-- scripts -->
+      <script src="../particles.js"></script>
+      <script src="js/app.js"></script>
+
+      <!-- stats.js -->
+      <script src="js/lib/stats.js"></script>
+      <script>
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function () {
+          stats.begin();
+          stats.end();
+          if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+          }
+          requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      </script>
+
+      <script src="particles.js-master/particles.js"></script>
+      <script src="particles.js-master/demo/js/app.js"></script>
+      <script src="materialize/js/jquery.js"></script>
+      <script src=""></script>
+
+      <div class="" style="position: absolute;top: 30%;  width: 100%;">
+        <div style="text-align: center;">
+          <img src="IMG/IMG_9633-removebg-preview.png" alt="" width="17%" class="hide-on-small-only">
+          <img src="IMG/IMG_9633-removebg-preview.png" alt="" width="50%" class="hide-on-large-only"
+            style="padding-top: 15%;">
+          <h1 style="color: white;font-size: 50px;font-weight: 700;" id="#home" class="section scrollSpy"></h1>
+          <h1 class="main-text">
+
+          </h1><br><br>
+
+          <div class="row"
+            style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;">
+
+            <a href="get started.html">
+              <button class="but">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div
+      style=" width: 100%; height:300%; background: linear-gradient(to left ,rgb(12, 12, 35),rgb(12, 12, 35)); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;">
+      <br><br><br><br><br>
+      <div style="height: 500px;color: white; font-weight: 700;text-align: center;" class="container">
+        <h1 style=" font-size: 60px; color: #01fffb;">ABOUT ME</h1>
+        <p style="font-size: 20px;">As a front-end web developer, I fuse creativity with code to build sleek,
+          interactive digital experiences. From pixel-perfect design to dynamic functionality, I bring ideas to life on
+          the web with speed and style. Let’s turn visions into vibrant, immersive realities that captivate and connect.
+        </p>
+
+        <div style="font-weight: 600;"> <br><br><br><br><br>
+          <p style="font-size: 30px; color: #01fffb;"> Languages i studied</p> <br> <br>
+
+          <div class="owl-carousel hide-on-small-only">
+            <div class="item"><img src="img icon/css.png" alt=""></div>
+            <div class="item"><img src="img icon/html icon.png" alt="" width="50%"></div>
+            <div class="item"><img src="img icon/jave icon.png" alt="" width="50%"></div>
+            <div class="item"><img src="img icon/jave_script-removebg-preview.png" alt="" width="9%"></div>
+            <div class="item"><img src="img icon/jquery.png" alt="" width="9%"></div>
+          </div>
+          <div class="owl-carousel hide-on-large-only">
+            <div class="itemm"><img src="img icon/css.png" alt=""></div>
+            <div class="itemm"><img src="img icon/html icon.png" alt="" width="50%"></div>
+            <div class="itemm"><img src="img icon/jave icon.png" alt="" width="50%"></div>
+            <div class="itemm"><img src="img icon/jave_script-removebg-preview.png" alt="" width="9%"></div>
+            <div class="itemm"><img src="img icon/jquery.png" alt="" width="9%"></div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+
+
+      <div style="color: #01fffb;  " class="container center">
+        <h1 style=" font-size: 60px;">My Projects</h1>
+        <p style=" font-size: 20px;">I believe projects are the best way to learn. These are some projects I built</p>
+      </div>
+
+
+      <div style="margin-top: 4%;" class="carousel">
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/c.png" alt="" />
+        </div>
+        <div class="carousel-cell">
+
+          <img class="carousel-cell-image" src="image2/a.png" alt="" />
+
+        </div>
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/d.png" alt="" />
+        </div>
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/e.png" alt="" />
+        </div>
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/f.png" alt="" />
+        </div>
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/g.png" alt="" />
+        </div>
+        <div class="carousel-cell">
+          <img class="carousel-cell-image" src="image2/onbbonb.png" alt="" />
+        </div>
+      </div>
+      <br><br><br><br><br>
+      <div>
+        <h1 style="color: #01fffb;text-align: center;font-size: 60px;">SOCIALS</h1>
+          <p style=" font-size: 20px; text-align: center;color: #01fffb;" class="container">
+            Stay connected with Collective DAO through our official social media channels. Join the conversation, stay updated on the latest developments, and engage with the community.
+          </p>
+        <footer class="page-footer " style=" background: linear-gradient(to right,rgb(12, 12, 35),rgb(12, 12, 35));">
+          <div class="container">
+            <div class="row">
+
+            </div>
+
+            <div style="margin-top: 3%;" class="row  hide-on-small-only">
+              <div class="col l3 s12">
+                <a href="mailto:ebubegoodluck@icloud.com?subject=Project Details&cc=&bcc=">
+                  <h3><i style="color: rgb(255, 255, 255); font-size: 80px;" class="fa-regular fa-envelope "></i></h3>
+                </a>
+              </div>
+              <div class="col l3 s12">
+                <a href="">
+                  <h3><i style="color: rgb(255, 255, 255);font-size: 80px;" class="fa-brands fa-github "></i></h3>
+                </a>
+              </div>
+
+              <div class="col l2 s12">
+                <a href="">
+                  <h3><i style="color: rgb(255, 255, 255); font-size: 80px;" class="fa-brands fa-x-twitter "></i></h3>
+                </a>
+              </div>
+
+              <div class="col l2 s12">
+                <a href="https://t.me/ebibe4">
+                  <h3><i style="color: rgb(255, 255, 255);font-size: 80px;" class="fa-brands fa-telegram"></i></h3>
+                </a>
+              </div>
+
+              <div class="col l2  s12">
+                <a href="https://wa.me/message/BV7GYLRRQVJNL1">
+                  <h3><i style="color: rgb(255, 255, 255); font-size: 80px;" class="fa-brands fa-whatsapp"></i></h3>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+        </footer>
+      </div>
+
+      <div style="margin-top: 3%;" class="row hide-on-large-only container">
+        <div class="col l3 s2">
+          <a href="mailto:ebubegoodluck@icloud.com?subject=Project Details&cc=&bcc=">
+            <h3><i style="color: rgb(255, 255, 255); font-size: 50px;" class="fa-regular fa-envelope "></i></h3>
+          </a>
+        </div>
+        <div class="col l3 s2">
+          <a href="">
+            <h3><i style="color: rgb(255, 255, 255);font-size: 50px;" class="fa-brands fa-github "></i></h3>
+          </a>
+        </div>
+
+        <div class="col l2 s2">
+          <a href="">
+            <h3><i style="color: rgb(255, 255, 255); font-size: 50px;" class="fa-brands fa-x-twitter "></i></h3>
+          </a>
+        </div>
+
+        <div class="col l2 s2">
+          <a href="https://t.me/ebibe4">
+            <h3><i style="color: rgb(255, 255, 255);font-size: 50px;" class="fa-brands fa-telegram"></i></h3>
+          </a>
+        </div>
+
+        <div class="col l2  s2">
+          <a href="https://wa.me/message/BV7GYLRRQVJNL1">
+            <h3><i style="color: rgb(255, 255, 255); font-size: 50px;" class="fa-brands fa-whatsapp"></i></h3>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    </footer>
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+
+
+    <script src="materialize/js/jquery.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+      var $carousel = $('.carousel').flickity({
+        imagesLoaded: true,
+        percentPosition: false,
+      });
+
+      var $imgs = $carousel.find('.carousel-cell img');
+      // get transform property
+      var docStyle = document.documentElement.style;
+      var transformProp = typeof docStyle.transform == 'string' ?
+        'transform' : 'WebkitTransform';
+      // get Flickity instance
+      var flkty = $carousel.data('flickity');
+
+      $carousel.on('scroll.flickity', function () {
+        flkty.slides.forEach(function (slide, i) {
+          var img = $imgs[i];
+          var x = (slide.target + flkty.x) * -1 / 3;
+          img.style[transformProp] = 'translateX(' + x + 'px)';
+        });
+      });
+
+    </script>
+
+    <script>const text = document.querySelector(".main-text");
+
+      var n = 0;
+      let timer = setInterval(onTick, 2500);
+
+      function onTick() {
+        if (n === 0) {
+          text.innerHTML = " Hi there! I'm <span >Emmanuel</span>";
+
+          n = 1;
+          return;
+        }
+        if (n === 4) {
+          text.innerHTML = ' Hi there! I\'m <span class="jobs" ">Emmanuel</span>';
+
+          n = 1;
+          return;
+        } else if (n == 1) {
+          text.innerHTML = ' Hi there! I\'m <span class="jobs">a Web Developer</span>';
+          n = 2;
+          return;
+        } else if (n == 2) {
+          text.innerHTML =
+            ' Hi there! I\'m <span class="jobs">a Graphic designer</span>';
+          n = 3;
+          return;
+        } else if (n == 3) {
+          text.innerHTML = ' Hi there! I\'m <span class="jobs">a Data analytic</span>';
+          n = 4;
+          return;
+        }
+      }</script>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 3, // Number of items to show
+          margin: 10, // Margin between items
+          dots: true, // Show dots
+          autoplay: true, // Enable autoplay
+          autoplayTimeout: 2000, // Time between each slide
+          loop: true // Loop the slides
+        });
+
+      });
+    </script>
+
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      var sticky = navbar.offsetTop;
+      var btn = document.getElementsByClassName('.hover')
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > sticky) {
+          navbar.style.background = 'black';
+          btn.style.background = 'white'
+
+
+        } else {
+          navbar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        }
+      });
+
+    </script>
+
+
+    <script>
+      $(document).ready(function () {
+        $('.sidenav').sidenav();
+        $('.slider').slider();
+        $('.carousel').carousel();
+        $('.scrollspy').scrollSpy();
+      });
+    </script>
+
+  </body>
+
+</html>
